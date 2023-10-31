@@ -11,6 +11,8 @@
 		C162D14D2AF0B4040027387A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C162D14C2AF0B4040027387A /* ContentView.swift */; };
 		C162D14F2AF0B4060027387A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C162D14E2AF0B4060027387A /* Assets.xcassets */; };
 		C162D1522AF0B4060027387A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C162D1512AF0B4060027387A /* Preview Assets.xcassets */; };
+		C162D15A2AF0B8070027387A /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C162D1592AF0B8070027387A /* LocationViewModel.swift */; };
+		C176DCC42AF0D4C100A58134 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C176DCC32AF0D4C100A58134 /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,10 @@
 		C162D14C2AF0B4040027387A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C162D14E2AF0B4060027387A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C162D1512AF0B4060027387A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C162D1592AF0B8070027387A /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		C162D15E2AF0BA8F0027387A /* SanFrancisco.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SanFrancisco.gpx; sourceTree = "<group>"; };
+		C162D15F2AF0BB8B0027387A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C176DCC32AF0D4C100A58134 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 		C162D13E2AF0B4040027387A = {
 			isa = PBXGroup;
 			children = (
+				C162D15E2AF0BA8F0027387A /* SanFrancisco.gpx */,
 				C162D1492AF0B4040027387A /* MapsRecreation */,
 				C162D1482AF0B4040027387A /* Products */,
 			);
@@ -51,10 +58,14 @@
 		C162D1492AF0B4040027387A /* MapsRecreation */ = {
 			isa = PBXGroup;
 			children = (
+				C162D15F2AF0BB8B0027387A /* Info.plist */,
+				C162D15B2AF0B82C0027387A /* View */,
+				C162D1582AF0B7EF0027387A /* ViewModels */,
 				C162D14A2AF0B4040027387A /* MapsRecreationApp.swift */,
 				C162D14C2AF0B4040027387A /* ContentView.swift */,
 				C162D14E2AF0B4060027387A /* Assets.xcassets */,
 				C162D1502AF0B4060027387A /* Preview Content */,
+				C176DCC32AF0D4C100A58134 /* test.swift */,
 			);
 			path = MapsRecreation;
 			sourceTree = "<group>";
@@ -65,6 +76,21 @@
 				C162D1512AF0B4060027387A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C162D1582AF0B7EF0027387A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C162D1592AF0B8070027387A /* LocationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C162D15B2AF0B82C0027387A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C162D14D2AF0B4040027387A /* ContentView.swift in Sources */,
+				C176DCC42AF0D4C100A58134 /* test.swift in Sources */,
+				C162D15A2AF0B8070027387A /* LocationViewModel.swift in Sources */,
 				C162D14B2AF0B4040027387A /* MapsRecreationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +298,9 @@
 				DEVELOPMENT_TEAM = 3U3G4VR3QU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapsRecreation/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To show your location on Map, we need your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To get your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +330,9 @@
 				DEVELOPMENT_TEAM = 3U3G4VR3QU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapsRecreation/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To show your location on Map, we need your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To get your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

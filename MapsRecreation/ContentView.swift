@@ -6,16 +6,46 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
+    @ObservedObject var locationViewModel = LocationViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+      ZStack {
+            if locationViewModel.location != nil {
+                Map(coordinateRegion: .constant(
+                           MKCoordinateRegion(
+                            center: locationViewModel.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0),
+                               span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                           )
+                )).ignoresSafeArea()
+            } else {
+//                Text("Waiting for location...")
+                Map(coordinateRegion: .constant(
+                           MKCoordinateRegion(
+                            center: locationViewModel.location?.coordinate ?? CLLocationCoordinate2D(latitude: 23.719898, longitude: 90.389574),
+                               span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                           )
+                )).ignoresSafeArea()
+            }
+          VStack {
+              Spacer()
+              Button {
+                  locationViewModel.startUpdatingLocation()
+              } label: {
+                  Image(systemName: "map")
+                      .foregroundColor(Color.black)
+                      .frame(width: 30,height: 30)
+                      .padding(4)
+                      .background(Color.white)
+                      .cornerRadius(30)
+                      .padding()
+                      .frame(maxWidth: .infinity,alignment: .trailing)
+                     
+          }
+          }
         }
-        .padding()
     }
 }
 
